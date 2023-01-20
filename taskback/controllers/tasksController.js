@@ -1,12 +1,12 @@
 const tasks = [
-    {
-        title: 'Crear Portafolio',
-        description: 'Creacion de portafolio para mostrar proyectos'
-    },
-    {
-        title: 'Desarrollar proyectos',
-        description: 'Continuar con el proyecto de tasks'
-    }
+    // {
+    //     title: 'Crear Portafolio',
+    //     description: 'Creacion de portafolio para mostrar proyectos'
+    // },
+    // {
+    //     title: 'Desarrollar proyectos',
+    //     description: 'Continuar con el proyecto de tasks'
+    // }
 ];
 
 const tasksController = {
