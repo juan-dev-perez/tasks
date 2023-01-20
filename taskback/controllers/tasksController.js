@@ -4,7 +4,7 @@ const tasks = [
         description: 'Creacion de portafolio para mostrar proyectos'
     },
     {
-        title: 'Desarrollar mas proyectos',
+        title: 'Desarrollar muchos mas proyectos',
         description: 'Continuar con el proyecto de tasks'
     }
 ];
