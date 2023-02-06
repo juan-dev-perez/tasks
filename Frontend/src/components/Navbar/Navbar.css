@@ -1,0 +1,20 @@
+.nav_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    color:white;
+    background-color: #808080;
+    padding: 0 150px 0 150px;
+}
+
+.ul_nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.li_nav{
+    list-style: none;
+}

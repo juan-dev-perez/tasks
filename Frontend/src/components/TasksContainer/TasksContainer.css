@@ -1,0 +1,26 @@
+.tasks_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.table{
+    box-shadow: 0px 0px 20px gray;
+    border-collapse:collapse;
+    border-radius: 10px;
+}
+
+.table th{
+    padding: 12px;
+}
+
+.table td{
+    padding:15px;
+    border-top: 1px solid #202020;
+}
+
+.title_table, .body_table{
+    border-right: 1px solid #202020;
+}
