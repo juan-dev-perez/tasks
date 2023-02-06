@@ -22,7 +22,7 @@ export const tasksService = {
         await Tasks.sync();
         const response = await Tasks.update(data,{
             where : {
-                id: id
+                id : id
             }
         });
         return response;
