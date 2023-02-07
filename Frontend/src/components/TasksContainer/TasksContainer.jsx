@@ -1,24 +1,24 @@
-import axios from "axios";
 import './TasksContainer.css';
 import { useEffect, useState } from 'react';
 import Task from "./Task/Task";
+import { getAll } from "../../api/tasks.api.js";
 
 const TasksContainer = () => {
+    
+    const [tasks, setTasks] = useState([]);
 
     const getTasks = async () => {
-        const data = await axios.get('http://localhost:8080/tasks');
+        const data = await getAll();
         setTasks(data.data);
     }
     
-    const [tasks, setTasks] = useState([]);
     useEffect(() => {
         getTasks();
     }, [])
     
-    console.log(tasks);
-    
     return (
         <div className="tasks_container">
+            <h1>Tasks</h1>
             <table className="table">
                 <thead>
                     <tr>

@@ -5,16 +5,27 @@
     align-items: center;
     height: 60px;
     color:white;
-    background-color: #808080;
-    padding: 0 150px 0 150px;
+    background-color: #2b2b2b;
+    padding: 0 250px 0 250px;
 }
 
 .ul_nav{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 40px;
 }
 
 .li_nav{
     list-style: none;
+}
+
+.link_navbar{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.link_navbar:hover{
+    color:rgb(175, 175, 175);
 }
