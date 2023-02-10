@@ -1,3 +1,4 @@
+import './NewTaskForm.css';
 import { Formik, Form } from 'formik';
 import { createTask } from '../../../api/tasks.api.js';
 
@@ -37,8 +38,8 @@ const NewTaskForm = () => {
                 handleBlur,
                 touched
             }) => (
-                <Form onSubmit={handleSubmit}>
-                    <label>Title</label>
+                <Form onSubmit={handleSubmit} className='form'>
+                    {/* <label>Title</label> */}
                     <input 
                         type="text"
                         name="title"
@@ -47,9 +48,11 @@ const NewTaskForm = () => {
                         onBlur={handleBlur}
                         value={values.title}
                     />
-                    {errors.title && touched.title && errors.title}
+                    <span className='form_error'>
+                        {errors.title && touched.title && errors.title}
+                    </span>
                     
-                    <label>Description</label>
+                    {/* <label>Description</label> */}
                     <input 
                         type="text"
                         name="description"
@@ -58,7 +61,9 @@ const NewTaskForm = () => {
                         onBlur={handleBlur}
                         value={values.description}
                     />
-                    {errors.description && touched.description && errors.description}
+                    <span className='form_error'>
+                        {errors.description && touched.description && errors.description}
+                    </span>
 
                     <button type='submit' disabled={isSubmitting}>
                         {isSubmitting ? 'Adding...' : 'Add'}

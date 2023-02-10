@@ -1,5 +1,6 @@
 .new_task_form{
     box-shadow: 0px 0px 20px gray;
     border-radius: 10px;
-    margin-top: 80px;
+    margin-top: 50px;
+    width: 400px;
 }
