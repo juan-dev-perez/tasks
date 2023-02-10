@@ -3,3 +3,7 @@
   padding: 0px;
   font-family: 'Helvetica';
 }
+
+a{
+  text-decoration: none !important;
+}

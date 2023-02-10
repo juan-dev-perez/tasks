@@ -1,7 +1,7 @@
-import './TasksContainer.css';
 import { useEffect, useState } from 'react';
-import Task from "./Task/Task";
 import { getAll } from "../../api/tasks.api.js";
+import { Table, Container } from 'react-bootstrap';
+import Task from "./Task/Task";
 
 const TasksContainer = () => {
     
@@ -17,13 +17,15 @@ const TasksContainer = () => {
     }, [])
     
     return (
-        <div className="tasks_container">
+        <Container>
             <h1>Tasks</h1>
-            <table className="table">
+            <Table responsive>
                 <thead>
                     <tr>
-                        <th className="title_table">Title</th>
+                        <th>Title</th>
                         <th>Description</th>
+                        <th>Done</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,8 +35,8 @@ const TasksContainer = () => {
                         ))
                     }
                 </tbody>
-            </table>
-        </div>
+            </Table>
+        </Container>
     );
 }
 

@@ -1,29 +1,38 @@
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
-const Navbar = () => {
+const NavBar = () => {
 
   return (
-    <div className='nav_container'>
-      <div>
-        <Link className='link_navbar' to='/'>
-          Task Control
-        </Link>
-      </div>
-      <ul className='ul_nav'>
-        <li className='li_nav'>
-          <Link className='link_navbar' to='/'>
-            Home
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+
+        <Navbar.Brand>
+          <Link to='/' className='nav-link'>
+            Task Control
           </Link>
-        </li>
-        <li className='li_nav'>
-          <Link className='link_navbar' to='/new-task'>
-            New Task
-          </Link>
-        </li>
-      </ul>
-    </div>
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto"/>
+
+          <Nav>
+            <Link to='/' className='nav-link'>
+              Home
+            </Link>
+
+            <Link to='/new-task' className='nav-link'>
+              New Task  
+            </Link>
+          </Nav>
+
+        </Navbar.Collapse>
+
+      </Container>
+    </Navbar>
   )
 }
 
-export default Navbar
+export default NavBar

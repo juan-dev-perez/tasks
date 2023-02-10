@@ -1,12 +1,12 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
+import NavBar from "../components/NavBar/NavBar";
 import TasksContainer from "../components/TasksContainer/TasksContainer";
 import NewTasksContainer from "../components/NewTaskContainer/NewTaskContainer";
 
 const Router = () => {
   return (
     <BrowserRouter>
-        <Navbar/>
+        <NavBar/>
         <Routes>
             <Route path='/' element={<TasksContainer/>} />
             <Route path='/new-task' element={<NewTasksContainer/>} />

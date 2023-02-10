@@ -3,8 +3,10 @@ import React from 'react'
 const Task = ({task}) => {
   return (
     <tr>
-        <td className='body_table'>{task.title}</td>
+        <td>{task.title}</td>
         <td>{task.description}</td>
+        <td>check</td>
+        <td>editar - eliminar</td>
     </tr>
   )
 }

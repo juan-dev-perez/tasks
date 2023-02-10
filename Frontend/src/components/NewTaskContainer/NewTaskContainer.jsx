@@ -1,4 +1,3 @@
-import './NewTaskContainer.css';
 import NewTaskForm from './NewTaskForm/NewTaskForm';
 
 const NewTaskContainer = () => {

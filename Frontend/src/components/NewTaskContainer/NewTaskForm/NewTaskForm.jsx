@@ -1,4 +1,3 @@
-import './NewTaskForm.css';
 import { Formik, Form } from 'formik';
 import { createTask } from '../../../api/tasks.api.js';
 
@@ -39,7 +38,7 @@ const NewTaskForm = () => {
                 touched
             }) => (
                 <Form onSubmit={handleSubmit} className='form'>
-                    {/* <label>Title</label> */}
+                    
                     <input 
                         type="text"
                         name="title"
@@ -52,7 +51,6 @@ const NewTaskForm = () => {
                         {errors.title && touched.title && errors.title}
                     </span>
                     
-                    {/* <label>Description</label> */}
                     <input 
                         type="text"
                         name="description"
