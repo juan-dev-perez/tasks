@@ -18,8 +18,10 @@ const TasksContainer = () => {
     
     return (
         <Container>
-            <h1>Tasks</h1>
-            <Table responsive>
+            <div className='title-centered mt-5'>
+                <h1>Tasks</h1>
+            </div>
+            <Table responsive className='mt-3'>
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -28,7 +30,7 @@ const TasksContainer = () => {
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='table-group-divider'>
                     {
                         tasks.map( (task, id) => (
                             <Task key={id} task={task}/>

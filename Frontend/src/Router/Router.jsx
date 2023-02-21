@@ -10,6 +10,7 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<TasksContainer/>} />
             <Route path='/new-task' element={<NewTasksContainer/>} />
+            <Route path='/new-task/:idTask' element={<NewTasksContainer/>} />
         </Routes>
     </BrowserRouter>
   )
