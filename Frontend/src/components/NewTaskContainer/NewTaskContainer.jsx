@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Container } from "react-bootstrap";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getOne } from '../../api/tasks.api';
 import NewTaskForm from './NewTaskForm/NewTaskForm';
 
 const NewTaskContainer = () => {
 
   const { idTask } = useParams();
-
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -18,8 +18,13 @@ const NewTaskContainer = () => {
 
   const getTask = async () => {
       const task = await getOne(idTask);
-      setTitle(task.data.title);
-      setDescription(task.data.description);
+
+      if(task.data){
+        setTitle(task.data.title);
+        setDescription(task.data.description);
+      }else{
+        idTask && navigate('/');
+      }
   }
 
   useEffect( () => {

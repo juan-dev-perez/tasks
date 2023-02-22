@@ -23,7 +23,7 @@ const NavBar = () => {
               Home
             </Link>
 
-            <Link to='/new-task' className='nav-link'>
+            <Link to='/new' className='nav-link'>
               New Task  
             </Link>
           </Nav>

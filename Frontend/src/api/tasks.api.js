@@ -11,3 +11,6 @@ export const createTask = async data =>
 
 export const updateTask = async (id, data) => 
     await axios.put(`http://localhost:8080/tasks/${id}`, data);
+
+export const deleteTask = async id => 
+    await axios.delete(`http://localhost:8080/tasks/${id}`);

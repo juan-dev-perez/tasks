@@ -1,21 +1,16 @@
-import { useEffect, useState } from 'react';
-import { getAll } from "../../api/tasks.api.js";
+import { useEffect } from 'react';
 import { Table, Container } from 'react-bootstrap';
+import { useTasks } from "../../context/TaskContext";
 import Task from "./Task/Task";
 
 const TasksContainer = () => {
-    
-    const [tasks, setTasks] = useState([]);
 
-    const getTasks = async () => {
-        const data = await getAll();
-        setTasks(data.data);
-    }
+    const { tasks, getTasks } = useTasks();
     
     useEffect(() => {
         getTasks();
     }, [])
-    
+
     return (
         <Container>
             <div className='title-centered mt-5'>

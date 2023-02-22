@@ -15,6 +15,10 @@ export const Task = sequelize.define('Task', {
     description: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    done: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
     }
 });
 

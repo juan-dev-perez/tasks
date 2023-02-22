@@ -1,8 +1,11 @@
 import { Formik } from 'formik';
 import { Container, Button, Form } from "react-bootstrap";
 import { updateTask, createTask } from '../../../api/tasks.api.js';
+import { useNavigate } from "react-router-dom";
 
 const NewTaskForm = ( { idTask, title, setTitle, description, setDescription } ) => {
+
+    const navigate = useNavigate();
 
     let iniValues = { }
     if(idTask){
@@ -36,17 +39,15 @@ const NewTaskForm = ( { idTask, title, setTitle, description, setDescription } )
                     if(!idTask){
                         try{
                             const response = await createTask( values );
-                            console.log(response);
                             actions.resetForm();
+                            navigate('/');
                         }catch(error){
                             console.log(error);
                         }
                     }else{
                         try{
                             const response = await updateTask( idTask , values );
-                            setTitle(values.title);
-                            setDescription(values.description);
-                            console.log(response);
+                            navigate('/');
                         }catch(error){
                             console.log(error);
                         }

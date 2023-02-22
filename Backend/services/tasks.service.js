@@ -2,10 +2,12 @@ import { Task as Tasks } from "../models/task.model.js";
 
 export const tasksService = {
     getAll : async () => {
+        await Tasks.sync();
         const response = await Tasks.findAll();
         return response;
     },
     getOne : async (id) => {
+        await Tasks.sync();
         const response = await Tasks.findOne({
             where: {
                 id : id
