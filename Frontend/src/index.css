@@ -17,3 +17,12 @@ a{
 .links{
   color:black;
 }
+
+.dashed{
+  text-decoration:line-through;
+  color: #198754;
+}
+
+.iconsAction{
+  height: 20px;
+}

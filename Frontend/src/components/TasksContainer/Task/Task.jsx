@@ -1,23 +1,34 @@
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Form, Image } from "react-bootstrap";
 import { useTasks } from "../../../context/TaskContext";
 
 const Task = ({task}) => {
 
-  const { delTask } = useTasks();
+  const { delTask, checkTask } = useTasks();
   return (
-    <tr>
+    <tr className={ task.done ? "dashed" : ''} >
         <td>{task.title}</td>
         <td>{task.description}</td>
-        <td>check</td>
+        <td>
+          <Form.Check
+            defaultChecked={task.done}
+            onClick={ async () => await checkTask(task.id) }
+          />
+        </td>
         <td className="d-flex gap-3">
           <Link className="links" to={`/edit/${task.id}`}>
-            <Button variant="outline-primary">Update</Button>
+            {/* <Button variant="outline-primary">Update</Button> */}
+            <Image className="iconsAction" src="/update.png"/>
+
           </Link>
           
           <Link className="links" to={''}>
-            <Button variant="outline-danger" onClick={ () => delTask(task.id) }>Delete</Button>
+            {/* <Button variant="outline-danger" onClick={ () => delTask(task.id) }>Delete</Button> */}
+              <Image className="iconsAction" onClick={ () => delTask(task.id) } src="/delete.png"/>
           </Link>
+          
+          
+          
           </td>
     </tr>
   )

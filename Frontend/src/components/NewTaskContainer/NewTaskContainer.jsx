@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useParams, useNavigate } from 'react-router-dom';
 import { getOne } from '../../api/tasks.api';
 import NewTaskForm from './NewTaskForm/NewTaskForm';
@@ -34,22 +34,25 @@ const NewTaskContainer = () => {
 
   return (
     <Container>
-      <div className='title-centered mt-5'>
-        {
-          !idTask 
-          ? <h1>Add a new task</h1> 
-          : <h1>Update task</h1>
-        }
-      </div>
+      <Row>
+        <Col xxl={8} xl={8} lg={8} md={10} sm={11} className='mx-auto'>
+          <div className='title-centered mt-5'>
+            {
+              !idTask 
+              ? <h1>Add a new task</h1> 
+              : <h1>Update task</h1>
+            }
+          </div>
 
-        <NewTaskForm 
-          idTask={idTask} 
-          title={title} 
-          setTitle={setTitle}
-          description={description} 
-          setDescription={setDescription}
-        />
-
+          <NewTaskForm 
+            idTask={idTask} 
+            title={title} 
+            setTitle={setTitle}
+            description={description} 
+            setDescription={setDescription}
+          />
+        </Col>
+      </Row>
     </Container>
     
   )

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { getAll, deleteTask } from "../api/tasks.api";
+import { getAll, deleteTask, checkTaskDone } from "../api/tasks.api";
 
 export const TaskContext = createContext();
 
@@ -31,11 +31,26 @@ export const TaskContextProvider = ({children}) => {
         }
     }
 
+    const checkTask = async (id) => {
+        try{
+            const taskChek = tasks.find( task => task.id == id);
+            await checkTaskDone(id, taskChek.done === false ? true : false );
+            setTasks(
+                tasks.map( task => 
+                    task.id == id ? { ...task, done: !task.done } : task
+                )
+            );
+        }catch(error){
+            console.error(error);
+        }
+    }
+
     return (
         <TaskContext.Provider value={{
                 tasks,
                 getTasks,
-                delTask
+                delTask,
+                checkTask
             }}>
             {children}
         </TaskContext.Provider>

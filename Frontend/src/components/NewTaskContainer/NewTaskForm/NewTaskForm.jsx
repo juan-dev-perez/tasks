@@ -47,6 +47,7 @@ const NewTaskForm = ( { idTask, title, setTitle, description, setDescription } )
                     }else{
                         try{
                             const response = await updateTask( idTask , values );
+                            console.log(response);
                             navigate('/');
                         }catch(error){
                             console.log(error);
