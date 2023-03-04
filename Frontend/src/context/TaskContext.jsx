@@ -25,7 +25,6 @@ export const TaskContextProvider = ({children}) => {
         try{
             const response = await deleteTask(id);
             setTasks(tasks.filter( task => task.id !== id));
-            console.log(response);
         }catch(error){
             console.error(error);
         }

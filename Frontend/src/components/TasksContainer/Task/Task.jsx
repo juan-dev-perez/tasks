@@ -17,19 +17,13 @@ const Task = ({task}) => {
         </td>
         <td className="d-flex gap-3">
           <Link className="links" to={`/edit/${task.id}`}>
-            {/* <Button variant="outline-primary">Update</Button> */}
             <Image className="iconsAction" src="/update.png"/>
-
           </Link>
           
           <Link className="links" to={''}>
-            {/* <Button variant="outline-danger" onClick={ () => delTask(task.id) }>Delete</Button> */}
-              <Image className="iconsAction" onClick={ () => delTask(task.id) } src="/delete.png"/>
+            <Image className="iconsAction" onClick={ () => delTask(task.id) } src="/delete.png"/>
           </Link>
-          
-          
-          
-          </td>
+        </td>
     </tr>
   )
 }

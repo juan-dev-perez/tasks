@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { Table, Container, Row, Col } from 'react-bootstrap';
+import { Table, Container, Row, Col, Button } from 'react-bootstrap';
 import { useTasks } from "../../context/TaskContext";
 import Task from "./Task/Task";
+import { Link } from "react-router-dom";
 
 const TasksContainer = () => {
 
@@ -37,6 +38,13 @@ const TasksContainer = () => {
                     </Table>
                 </Col>
             </Row>
+            <div className='d-flex justify-content-center mt-3'>
+                <Link to='/new'>
+                    <Button variant='primary'>
+                        New Task
+                    </Button>
+                </Link>
+            </div>
         </Container>
     );
 }

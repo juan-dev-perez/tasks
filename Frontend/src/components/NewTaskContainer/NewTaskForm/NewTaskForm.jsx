@@ -38,7 +38,7 @@ const NewTaskForm = ( { idTask, title, setTitle, description, setDescription } )
 
                     if(!idTask){
                         try{
-                            const response = await createTask( values );
+                            await createTask( values );
                             actions.resetForm();
                             navigate('/');
                         }catch(error){
@@ -46,8 +46,7 @@ const NewTaskForm = ( { idTask, title, setTitle, description, setDescription } )
                         }
                     }else{
                         try{
-                            const response = await updateTask( idTask , values );
-                            console.log(response);
+                            await updateTask( idTask , values );
                             navigate('/');
                         }catch(error){
                             console.log(error);
@@ -99,14 +98,20 @@ const NewTaskForm = ( { idTask, title, setTitle, description, setDescription } )
                             </Form.Text>
                         </Form.Group>
 
-                        <Button variant="primary" type='submit' disabled={isSubmitting}>
+                        <div className='d-flex gap-2'>
+
+                        
+                        <Button variant="success" type='submit' disabled={isSubmitting}>
                             {isSubmitting ?
                                     !idTask ? 'Adding...' : 'Updating...'
                                 :
                                     !idTask ? 'Add' : 'Update'
                             }
                         </Button>
-                        
+                        <Button variant='danger' onClick={() => navigate('/')}>
+                            Cancel
+                        </Button>
+                        </div>
                     </Form>
                 )}
             </Formik>
